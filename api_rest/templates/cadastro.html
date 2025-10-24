@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/global.css' %}?v={{STATIC_VERSION}}">
+</head>
+<body>
+    <div class="container">
+        <!-- Seção esquerda: Título e imagem -->
+        <div class="left-section">
+            <h2>MAMO IA</h2>
+            <img src="{% static 'img/image01.png' %}" alt="Imagem Médica">
+        </div>
+
+        <!-- Seção direita: Formulário de Cadastro -->
+        <div class="right-section">
+            <h3>Cadastre-se</h3>
+            <form method="post">
+                {% csrf_token %}
+                
+                <!-- Exibir o campo "nome" -->
+                <div class="form-group">
+                    <label for="nome">Nome</label>
+                    {{ form.nome }}
+                    <div class="errorlist">{{ form.nome.errors }}</div>
+                </div>
+
+                <!-- Exibir o campo "email" -->
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    {{ form.email }}
+                    <div class="errorlist">{{ form.email.errors }}</div>
+                </div>
+
+                <!-- Exibir o campo "setor" -->
+                <div class="form-group">
+                    <label for="setor">Setor</label>
+                    {{ form.setor }}
+                    <div class="errorlist">{{ form.setor.errors }}</div>
+                </div>
+                
+                <!-- Campos de senha e confirmação de senha -->
+                <div class="form-group">
+                    <label for="password1">Senha</label>
+                    {{ form.password1 }}
+                    <div class="errorlist">{{ form.password1.errors }}</div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password2">Confirme a Senha</label>
+                    {{ form.password2 }}
+                    <div class="errorlist">{{ form.password2.errors }}</div>
+                </div>
+                
+                <!-- Botão de cadastro -->
+                <button type="submit">Cadastrar</button>
+            </form>
+            
+            <p>Já tem uma conta? <a href="{% url 'home' %}">Faça login aqui</a></p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+# python/django
+__pycache__/
+*.py[cod]
+*.sqlite3
+db.sqlite3
+.env
+.env.*
+
+# venv
+venv/
+.venv/
+
+# django static/media em produção
+staticfiles/
+media/
+
+# os/editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# uploads locais
+arquivos/
+uploads/

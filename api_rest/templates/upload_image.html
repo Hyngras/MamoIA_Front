@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload de Imagem Médica</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/global.css' %}?v={{STATIC_VERSION}}">    
+</head>
+<body>
+    <div class="container">
+        <!-- Seção esquerda: Título e imagem -->
+        <div class="left-section">
+            <h2>Insira a Imagem Médica</h2>
+            <img src="{% static 'img/image01.png' %}" alt="Imagem Médica">
+        </div>
+
+        <!-- Seção direita: Formulário de Upload -->
+        <div class="right-section">
+            <h3>Faça o upload da imagem</h3>
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="file">Selecione o arquivo:</label>
+                    <input type="file" id="file" name="file" required>
+                </div>
+                <div class="form-group">
+                    <label for="file_type">Tipo de arquivo:</label>
+                    <select id="file_type" name="file_type" required>
+                        <option value="jpg">Mamografia</option>
+                        <option value="png">Ultrassom</option>
+                        <option value="pdf">Termografia</option>
+                        <option value="pdf">Histopatologia</option>
+                    </select>
+                </div>
+                <button type="submit">Fazer Upload</button>
+            </form>
+
+            <!-- Mensagem de sucesso após o upload -->
+            {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        </div>
+    </div>
+</body>
+</html>
