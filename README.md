@@ -6,7 +6,7 @@
 
 Aplicação web desenvolvida em **Django** para upload, visualização e análise de imagens médicas (ex.: mamografia).  
 
-> **Documentação de requisitos e histórias de usuário:** [docs/USER_STORIES.md](docs/USER_STORIES.md)
+> **Documentação de requisitos e histórias de usuário:** [USER_STORIES.md](projeto_mamoia/docs/USER_STORIES.md)
 
 ---
 
