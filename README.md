@@ -14,7 +14,7 @@ Aplicação web desenvolvida em **Django** para upload, visualização e anális
 
 | Login | Upload | Relatório |
 |-------|---------|-----------|
-| ![](docs/screenshots/1.png) | ![](docs/screenshots/2.png) | ![](docs/screenshots/3.png) | ![](docs/screenshots/4.png) |
+| ![](projeto_mamoia/docs/screenshots/1.png) | ![](projeto_mamoia/docs/screenshots/2.png) | ![](projeto_mamoia/docs/screenshots/3.png) | ![](projeto_mamoia/docs/screenshots/4.png) |
 
 
 ---
