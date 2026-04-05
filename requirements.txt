@@ -1,5 +1,6 @@
 Django==5.1.2
 Pillow>=10
-mysqlclient>=2.2    
+mysql-connector-python>=9.0  
 weasyprint==66.0
 django-environ>=0.11
+whitenoise>=6.0  # Servir arquivos estáticos
